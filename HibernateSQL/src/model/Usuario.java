@@ -5,10 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+//Se comienza declarando la clase como una entidad mediante la anotacion entity
 @Entity
+//Aqui se agrega la anotacion Table para indicar el nombre de la tabla a trabajar en la base de datos creada en MySQL
 @Table(name = "usuarios")
 public class Usuario {
 
+	//Atributos con las anotaciones de ID Y Column
 	@Id
 	@Column(name = "id_Usuarios")
 	private int id_Usuarios;
@@ -25,10 +29,12 @@ public class Usuario {
 	@Column(name = "Password")
 	private String Password;
 
+	//Constructor vacio
 	public Usuario() {
 
 	}
-
+ 
+	//Constructor de los atributos a utilizar
 	public Usuario(String nombre, String apellido, String correo, String password) {
 		super();
 		this.Nombre = nombre;
@@ -37,6 +43,8 @@ public class Usuario {
 		this.Password = password;
 	}
 
+	
+	//Getters and Setters
 	public int getId_Usuarios() {
 		return id_Usuarios;
 	}
@@ -77,6 +85,7 @@ public class Usuario {
 		Password = password;
 	}
 
+	//Por ultimo para llevar a cabo los procesos de impresion se utiliza el metodo toString 
 	@Override
 	public String toString() {
 		return "Usuario [id_Usuarios=" + id_Usuarios + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Correo="
